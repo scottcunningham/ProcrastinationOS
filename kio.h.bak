@@ -1,0 +1,17 @@
+#pragma once
+#ifndef KIO_H
+
+char * const VIDPTR = (char*)0xb8000;
+const int COLS = 25;
+const int ROWS = 80;
+const int MOD = 2;
+const int SCREEN_SIZE = 80 * 25 * 2;
+const int DEFAULT_COLOUR = 0x07;  // light grey on black background
+
+int kputchar(char c, char row, char col);
+
+int kputchar_colour(char c, char row, char col, unsigned char fg_colour,
+        unsigned char bg_colour);
+
+#define KIO_H
+#endif
